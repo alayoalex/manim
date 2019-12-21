@@ -56,6 +56,7 @@ class OpeningManimExample(Scene):
         )
         grid_transform_title.move_to(grid_title, UL)
         grid.prepare_for_nonlinear_transform()
+        
         self.play(
             grid.apply_function,
             lambda p: p + np.array([
