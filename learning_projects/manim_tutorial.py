@@ -9,6 +9,7 @@ class Shapes(Scene):
         circle = Circle()
         square = Square()
         line=Line(np.array([3,0,0]),np.array([5,0,0]))
+        another_line = Line(np.array([3,0,0]),np.array([5,0,0]))
         triangle=Polygon(np.array([0,0,0]),np.array([1,1,0]),np.array([1,-1,0]))
         self.play(ShowCreation(circle))
         self.play(FadeOut(circle))
@@ -16,6 +17,10 @@ class Shapes(Scene):
         self.play(GrowFromCenter(square))
         self.play(Transform(square,triangle))
         self.play(Transform(line,triangle))
+        self.play(FadeOut(line))
+        self.play(FadeOut(square))
+        self.play(Transform(triangle,circle))
+        self.play(Transform(triangle, another_line))
 
 
 class MoreShapes(Scene):
@@ -25,19 +30,21 @@ class MoreShapes(Scene):
         square.move_to(UP+LEFT)
         circle.surround(square)
         rectangle = Rectangle(height=2, width=3)
-        ellipse=Ellipse(width=3, height=1, color=RED)
-        ellipse.shift(2*DOWN+2*RIGHT)
-        pointer = CurvedArrow(2*RIGHT,5*RIGHT,color=MAROON_C)
-        arrow = Arrow(LEFT,UP)
-        arrow.next_to(circle,DOWN+LEFT)
-        rectangle.next_to(arrow,DOWN+LEFT)
-        ring=Annulus(inner_radius=.5, outer_radius=1, color=BLUE)
+        ellipse=Ellipse(width=3, height=2, color=RED)
+        ellipse.shift(2*DOWN + 2*RIGHT)
+        pointer = CurvedArrow(2*RIGHT, 5*RIGHT, color=MAROON_C)
+        arrow = Arrow(LEFT, DOWN)
+        arrow.next_to(circle, DOWN+LEFT)
+        rectangle.next_to(arrow, DOWN+LEFT)
+        ring=Annulus(inner_radius=.85, outer_radius=1, color=BLUE)
         ring.next_to(ellipse, RIGHT)
         self.add(pointer)
         self.play(FadeIn(square))
         self.play(Rotating(square),FadeIn(circle))
         self.play(GrowArrow(arrow))
         self.play(GrowFromCenter(rectangle), GrowFromCenter(ellipse), GrowFromCenter(ring))
+        rectangle1 = Rectangle(fill_color=GOLD_B, fill_opacity=1, height=0.2, width=3)
+        self.play(Transform(ring,rectangle1))
 
 
 class TryShapes(Scene):
@@ -111,13 +118,13 @@ class RotateAndHighlight(Scene):
     def construct(self):
         square=Square(side_length=5,fill_color=YELLOW, fill_opacity=.5)
         label=TextMobject("Text at an angle")
-        label.bg=BackgroundRectangle(label,fill_opacity=.5)
-        label_group=VGroup(label.bg,label) #Order matters
+        label.bg=BackgroundRectangle(label, fill_opacity=.5)
+        label_group=VGroup(label.bg, label) #Order matters
         label_group.rotate(TAU/8)
-        label2=TextMobject("Boxed text",color=BLACK)
-        label2.bg=SurroundingRectangle(label2,color=BLUE,fill_color=RED, fill_opacity=.5)
-        label2_group=VGroup(label2,label2.bg)
-        label2_group.next_to(label_group,DOWN)
+        label2=TextMobject("Boxed text", color=BLACK)
+        label2.bg=SurroundingRectangle(label2, color=BLUE, fill_color=RED, fill_opacity=.5)
+        label2_group=VGroup(label2, label2.bg)
+        label2_group.next_to(label_group, DOWN)
         label3=TextMobject("Rainbow")
         label3.scale(2)
         label3.set_color_by_gradient(RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE)
@@ -125,7 +132,7 @@ class RotateAndHighlight(Scene):
         self.add(square)
         self.play(FadeIn(label_group))
         self.play(FadeIn(label2_group))
-        self.play(FadeIn(label3))
+        self.play(Write(label3))
         self.play(Rotate(label.bg))
 
 
@@ -168,7 +175,7 @@ class MovingCharges(Scene):
         plane = NumberPlane(**self.plane_kwargs)
         plane.add(plane.get_axis_labels())
         self.add(plane)
-        field = VGroup(*[self.calc_field(x*RIGHT+y*UP)
+        field = VGroup(*[self.calc_field(x*RIGHT + y*UP)
             for x in np.arange(-9,9,1)
             for y in np.arange(-5,5,1)
         ])
@@ -190,8 +197,8 @@ class MovingCharges(Scene):
         numb_charges=4
         possible_points = [v.get_start() for v in self.field]
         points = random.sample(possible_points, numb_charges)
-        particles = VGroup(*[
         
+        particles = VGroup(*[        
         self.Positron().move_to(point)
             for point in points
         ])
@@ -201,7 +208,7 @@ class MovingCharges(Scene):
 
         self.play(FadeIn(particles))
         self.moving_particles = particles
-        self.add_foreground_mobjects(self.moving_particles )
+        self.add_foreground_mobjects(self.moving_particles)
         self.always_continually_update = True
         self.wait(10)
     

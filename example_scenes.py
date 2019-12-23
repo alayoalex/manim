@@ -126,6 +126,7 @@ class UpdatersExample(Scene):
 
         decimal.add_updater(lambda d: d.next_to(square, RIGHT))
         decimal.add_updater(lambda d: d.set_value(square.get_center()[1]))
+        
         self.add(square, decimal)
         self.play(
             square.to_edge, DOWN,

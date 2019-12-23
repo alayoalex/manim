@@ -134,7 +134,6 @@ class Thumbnail(GraphScene):
             secant_line_color = RED,
         )
 
-
         self.add(
             input_triangle_p2,
             graph_dot_p2,
@@ -152,7 +151,6 @@ class Thumbnail(GraphScene):
         }
         self.graph=graph
         iteraciones=6
-
 
         self.rect_list = self.get_riemann_rectangles_list(
             graph, iteraciones,start_color=PURPLE,end_color=ORANGE, **kwargs
