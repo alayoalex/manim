@@ -1,5 +1,5 @@
 from manimlib.imports import *
-from active_projects.diffyq.part1.shared_constructs import *
+from tb1b_projects.active.diffyq.part1.shared_constructs import *
 
 
 class SmallAngleApproximationTex(Scene):

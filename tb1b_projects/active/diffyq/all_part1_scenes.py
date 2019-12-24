@@ -1,8 +1,8 @@
-from active_projects.diffyq.part1.pendulum import *
-from active_projects.diffyq.part1.staging import *
-from active_projects.diffyq.part1.pi_scenes import *
-from active_projects.diffyq.part1.phase_space import *
-from active_projects.diffyq.part1.wordy_scenes import *
+from tb1b_projects.active.diffyq.part1.pendulum import *
+from tb1b_projects.active.diffyq.part1.staging import *
+from tb1b_projects.active.diffyq.part1.pi_scenes import *
+from tb1b_projects.active.diffyq.part1.phase_space import *
+from tb1b_projects.active.diffyq.part1.wordy_scenes import *
 
 OUTPUT_DIRECTORY = "diffyq/part1"
 SCENES_IN_ORDER = [
