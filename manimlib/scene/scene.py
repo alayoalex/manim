@@ -60,7 +60,7 @@ class Scene(Container):
     def setup(self):
         """
         This is meant to be implement by any scenes which
-        are comonly subclassed, and have some common setup
+        are commonly subclassed, and have some common setup
         involved before the construct method is called.
         """
         pass
@@ -402,9 +402,13 @@ class Scene(Container):
         def wrapper(self, *args, **kwargs):
             self.update_skipping_status()
             allow_write = not self.skip_animations
+            
+            # Writing videos, one by one, little by little. Each animations separatelly
             self.file_writer.begin_animation(allow_write)
             func(self, *args, **kwargs)
             self.file_writer.end_animation(allow_write)
+            
+            # Updating the number of animations (plays)
             self.num_plays += 1
         return wrapper
 

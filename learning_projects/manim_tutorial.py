@@ -11,6 +11,7 @@ class Shapes(Scene):
         line=Line(np.array([3,0,0]),np.array([5,0,0]))
         another_line = Line(np.array([3,0,0]),np.array([5,0,0]))
         triangle=Polygon(np.array([0,0,0]),np.array([1,1,0]),np.array([1,-1,0]))
+        
         self.play(ShowCreation(circle))
         self.play(FadeOut(circle))
         self.add(line)
@@ -38,6 +39,7 @@ class MoreShapes(Scene):
         rectangle.next_to(arrow, DOWN+LEFT)
         ring=Annulus(inner_radius=.85, outer_radius=1, color=BLUE)
         ring.next_to(ellipse, RIGHT)
+        
         self.add(pointer)
         self.play(FadeIn(square))
         self.play(Rotating(square),FadeIn(circle))
@@ -63,6 +65,7 @@ class AddingText(Scene):
         second_line.next_to(my_first_text,DOWN)
         third_line=TextMobject("for me and you!")
         third_line.next_to(my_first_text,DOWN)
+        
         self.add(my_first_text, second_line)
         self.wait(2)
         self.play(Transform(second_line,third_line))
@@ -82,6 +85,7 @@ class AddingMoreText(Scene):
         author=TextMobject("-Albert Einstein")
         author.scale(0.75)
         author.next_to(quote.get_corner(DOWN+RIGHT),DOWN)
+        
         self.add(quote)
         self.add(author)
         self.wait(2)

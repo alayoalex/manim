@@ -8,8 +8,6 @@ from tb1b_projects.old.div_curl import ShowTwoPopulations
 
 
 # Scenes
-
-
 class VectorFieldTest(Scene):
     def construct(self):
         plane = NumberPlane(

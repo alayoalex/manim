@@ -3,7 +3,6 @@ import cv2
 
 from manimlib.scene.scene import Scene
 
-
 # TODO, is this depricated?
 class SceneFromVideo(Scene):
     def construct(self, file_name,

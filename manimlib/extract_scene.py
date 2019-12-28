@@ -12,6 +12,7 @@ from manimlib.utils.sounds import play_finish_sound
 import manimlib.constants
 
 
+# It seems that this one opens the file (video) when finishes its rendering.
 def open_file_if_needed(file_writer, **config):
     if config["quiet"]:
         curr_stdout = sys.stdout
@@ -32,7 +33,7 @@ def open_file_if_needed(file_writer, **config):
 
         for file_path in file_paths:
             if current_os == "Windows":
-                os.startfile(file_path)
+                os.startfile(file_path)      # It seems that this one opens the file (video) when finishes its rendering.
             else:
                 commands = []
                 if current_os == "Linux":
@@ -149,13 +150,14 @@ def main(config):
         ]
     ])
 
+    # For each SceneClass it will render and different video.
     for SceneClass in scene_classes_to_render:
         try:
             # By invoking, this renders the full scene
-            scene = SceneClass(**scene_kwargs)
+            scene = SceneClass(**scene_kwargs)     # Intantiate the scene object and renders the full scene.
             open_file_if_needed(scene.file_writer, **config)
             if config["sound"]:
-                play_finish_sound()
+                play_finish_sound()   # After render it, a sound says that it has been done with success.
         except Exception:
             print("\n\n")
             traceback.print_exc()

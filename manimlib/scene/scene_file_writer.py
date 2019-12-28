@@ -254,7 +254,7 @@ class SceneFileWriter(object):
                 command += ['-f', 'mpegts']
                 command += [STREAMING_PROTOCOL + '://' + STREAMING_IP + ':' + STREAMING_PORT]
         else:
-            command += [temp_file_path]
+            command += [temp_file_path]              # it writes to an temporary file an then copy the temporal to the original one.
         self.writing_process = subprocess.Popen(command, stdin=subprocess.PIPE)
 
     def close_movie_pipe(self):
