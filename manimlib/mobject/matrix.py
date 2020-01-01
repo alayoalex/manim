@@ -67,7 +67,7 @@ class Matrix(VMobject):
 
     def __init__(self, matrix, **kwargs):
         """
-        Matrix can either either include numbres, tex_strings,
+        Matrix can either either include numbers, tex_strings,
         or mobjects
         """
         VMobject.__init__(self, **kwargs)
