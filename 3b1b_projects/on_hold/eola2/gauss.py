@@ -1,5 +1,4 @@
 from fractions import Fraction
-
 from manimlib.imports import *
 from functools import reduce
 
@@ -191,7 +190,9 @@ class ShowRowReduction(Scene):
         row1.target.align_to(row1, LEFT)
 
         row2.target.next_to(row1.target, DOWN, buff=MED_LARGE_BUFF)
-        lp, rp = row2_parens = TexMobject("()")
+        row2_parens = TexMobject("()")
+        lp = TexMobject("(")
+        rp = TexMobject(")")
         row2_parens.set_height(row2.get_height() + 2 * SMALL_BUFF)
         lp.next_to(row2, LEFT, SMALL_BUFF)
         rp.next_to(row2, RIGHT, SMALL_BUFF)
