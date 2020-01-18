@@ -14,10 +14,21 @@ class BasicEquations(Scene):
         self.play(Write(eq2))
 
 
+class ExerciseExampleIntegral(Scene):
+    def construct(self):
+        deriv, integral, v_t, dt, equals, v_T = formula = TexMobject(
+            "\\frac{d}{dT}", 
+            "\\int_0^T", "v(t)", "\\,dt", 
+            "=", "v(T)"
+        )
+
+        self.play(Write(formula))
+
+
 class ExerciseExample(Scene):
     def construct(self):
-        eq1=TexMobject(r"\int_{C} (2 + x^2y) \mathrm{d}x")
-        eq2=TexMobject(r"\int_{C} (2 + x^2y) \mathrm{d}x = \int_{0}^{\pi} (2 + (\cos x)^2 (\sin x)^2) \sqrt{(\frac{\mathrm{d} x}{\mathrm{d} t})^2 + (\frac{\mathrm{d} y}{\mathrm{d} t})^2} \,\mathrm{d}t")
+        eq1=TexMobject(r"\int_{C} (2 + x^2y) \,dx")
+        eq2=TexMobject(r"\int_{C} (2 + x^2y) dx = \int_{0}^{\pi} (2 + \cos^2 t \sin^2 t) \sqrt{\left(\frac{dx}{d t}\right)^2 + \left(\frac{dy}{dt}\right)^2} \,dt")
         eq1.shift(2*UP)
         #eq2.shift(1*UP)
         self.play(Write(eq1))
