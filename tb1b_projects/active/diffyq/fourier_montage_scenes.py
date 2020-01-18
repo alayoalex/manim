@@ -1,4 +1,4 @@
-from active_projects.diffyq.part4.long_fourier_scenes import *
+from tb1b_projects.active.diffyq.part4.long_fourier_scenes import *
 
 OUTPUT_DIRECTORY = "diffyq/part4"
 SCENES_IN_ORDER = [
