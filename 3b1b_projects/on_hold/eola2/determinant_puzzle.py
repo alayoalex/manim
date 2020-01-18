@@ -17,7 +17,7 @@ class WorkOutNumerically(Scene):
         equation = self.original_equation = TexMobject(
             "\\det(", "M_1", "M_2", ")", "=",
             "\\det(", "M_1", ")",
-            "\\det(", "M_2", ")",
+            "\\det(", "M_2", ")"
         )
         equation.set_color_by_tex_to_color_map({
             "M_1": self.M1_COLOR,
@@ -254,7 +254,9 @@ class SuccessiveLinearTransformations(LinearTransformationScene):
         self.wait()
 
         # Show full composition
-        rp, lp = parens = TexMobject("()")
+        parens = TexMobject("()")
+        lp = TexMobject("(")
+        rp = TexMobject(")")
         matrices = VGroup(M1, M2)
         matrices.generate_target()
         parens.match_height(matrices)
