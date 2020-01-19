@@ -228,8 +228,6 @@ class PlotFunctions(GraphScene):
         label_coord = self.input_to_graph_point(TAU,func_graph)
         two_pi.next_to(label_coord,RIGHT+UP)
 
-
-
         self.play(ShowCreation(func_graph),ShowCreation(func_graph2))
         self.play(ShowCreation(vert_line), ShowCreation(graph_lab), ShowCreation(graph_lab2),ShowCreation(two_pi))
 
