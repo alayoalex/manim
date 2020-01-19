@@ -1,6 +1,6 @@
 from manimlib.imports import *
-from tb1b_projects.active.diffyq.part1.shared_constructs import *
-from tb1b_projects.active.diffyq.part1.pendulum import Pendulum
+from from_3b1b.active.diffyq.part1.shared_constructs import *
+from from_3b1b.active.diffyq.part1.pendulum import Pendulum
 
 
 # TODO: Arguably separate the part showing many
