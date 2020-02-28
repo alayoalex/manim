@@ -1,8 +1,8 @@
 from manimlib.imports import *
 
-from tb1b_projects.active.diffyq.part2.fourier_series import FourierOfTrebleClef
-from tb1b_projects.active.diffyq.part4.complex_functions import TRangingFrom0To1
-from tb1b_projects.active.diffyq.part4.complex_functions import SimpleComplexExponentExample
+from from_3b1b.active.diffyq.part2.fourier_series import FourierOfTrebleClef
+from from_3b1b.active.diffyq.part4.complex_functions import TRangingFrom0To1
+from from_3b1b.active.diffyq.part4.complex_functions import SimpleComplexExponentExample
 
 
 class ComplexFourierSeriesExample(FourierOfTrebleClef):
