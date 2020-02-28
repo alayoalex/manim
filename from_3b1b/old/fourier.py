@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from constants import *
+from manimlib.constants import *
 import scipy.integrate
 
 from manimlib.imports import *
