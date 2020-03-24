@@ -8,8 +8,25 @@ class TryShapes(Scene):
     #My own scenes.
     def construct(self):
         pol = Polygon(np.array([0,0,0]),np.array([1,0,0]),np.array([1,1,0]), np.array([0,1,0]))
+        tri = Triangle(fill_color=RED, fill_opacity=1)
+        tri.shift(2*UP)
+        tri.set_fill()
+        dimenciones = tri.get_center_of_mass()
+        te = []
+
+        for d in dimenciones:
+            t = TexMobject(str(d))
+            t.move_to(DOWN)
+            if(len(te) > 0):
+                t.next_to(te[-1])
+            te.append(t)
+            
+
         self.play(GrowFromCenter(pol))
         self.play(Rotate(pol))
+        self.play(GrowFromEdge(tri, RIGHT))
+        for v in te:
+            self.play(Write(v))       
 
 
 class TryAddingMoreText(Scene):
