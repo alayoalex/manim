@@ -55,7 +55,7 @@ class OpeningManimExample(Scene):
             "applied to the grid"
         )
         grid_transform_title.move_to(grid_title, UL)
-        grid.prepare_for_nonlinear_transform()
+        grid.prepare_for_nonlinear_transform() # TODO look closely
         
         self.play(
             grid.apply_function,
