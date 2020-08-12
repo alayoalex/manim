@@ -1,11 +1,15 @@
 ![logo](logo/cropped.png)
 
 [![Build Status](https://travis-ci.org/3b1b/manim.svg?branch=master)](https://travis-ci.org/3b1b/manim)
+[![Documentation](https://img.shields.io/badge/docs-EulerTour-blue.svg)](https://www.eulertour.com/docs)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
 [![Manim Subreddit](https://img.shields.io/reddit/subreddit-subscribers/manim.svg?color=ff4301&label=reddit)](https://www.reddit.com/r/manim/)
 [![Manim Discord](https://img.shields.io/discord/581738731934056449.svg?label=discord)](https://discord.gg/mMRrZQW)
 
 Manim is an animation engine for explanatory math videos. It's used to create precise animations programmatically, as seen in the videos at [3Blue1Brown](https://www.3blue1brown.com/).
+
+This repository contains the version of manim used by 3Blue1Brown. There is also a community maintained version at https://github.com/ManimCommunity/manim/.
+To get help or to join the development effort, please join the [discord](https://discord.gg/mMRrZQW).
 
 ## Installation
 Manim runs on Python 3.7. You can install it from PyPI via pip:
@@ -118,35 +122,13 @@ Look through the `old_projects` folder to see the code for previous 3b1b videos.
 While developing a scene, the `-sp` flags are helpful to just see what things look like at the end without having to generate the full animation. It can also be helpful to use the `-n` flag to skip over some number of animations.
 
 ### Documentation
-Documentation is in progress at [eulertour.com/learn/manim](https://www.eulertour.com/learn/manim/).
+Documentation is in progress at [eulertour.com/docs](https://www.eulertour.com/docs/).
 
 ### Walkthrough
 Todd Zimmerman put together a [tutorial](https://talkingphysics.wordpress.com/2019/01/08/getting-started-animating-with-manim-and-python-3-7/) on getting started with manim, which has been updated to run on Python 3.7.
 
-### Live Streaming
-To live stream your animations, simply run manim with the `--livestream` option.
-
-```sh
-> python -m manim --livestream
-Writing to media/videos/scene/scene/1080p30/LiveStreamTemp.mp4
-
-Manim is now running in streaming mode. Stream animations by passing
-them to manim.play(), e.g.
->>> c = Circle()
->>> manim.play(ShowCreation(c))
-
->>>
-```
-
-It is also possible to stream directly to Twitch. To do that simply pass
-`--livestream` and `--to-twitch to manim` and specify the stream key with
-`--with-key`. Then when you follow the above example the stream will directly
-start on your Twitch channel (with no audio support).
-
-
 ## Contributing
-Is always welcome. In particular, there is a dire need for tests and documentation.
-
+Although they are welcome, pull requests to this repository are rarely accepted. Most pull requests should be directed to the [community version](https://github.com/ManimCommunity/manim/).
 
 ## License
 All files in the directory `from_3b1b`, which by and large generate the visuals for 3b1b videos, are copyright 3Blue1Brown.
